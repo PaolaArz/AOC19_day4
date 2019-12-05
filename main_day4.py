@@ -1,3 +1,5 @@
+from functools import reduce 
+
 start = 245182
 stop = 790572
 
@@ -15,4 +17,19 @@ def get_pwd(password_list):
 				counter += 1
 	return password_container
 
-print(len(get_pwd(my_input_list)))
+my_password_list = (get_pwd(my_input_list))
+
+print(len(my_password_list))
+
+#part two
+def get_pwd2(pwd_list):
+	counter = 0
+	for pwd in pwd_list:
+		for i in pwd:
+			if pwd.count(i) == 2:
+				counter += 1
+				break
+	return counter
+
+print(get_pwd2(my_password_list))
+
